@@ -61,11 +61,7 @@ Delete</button></form>
             <div>  {{ $countries->links() }} 
 </div>
         </div>
-      </div> <!-- end of .card -->
-<!--<div class="row" style="margin: 10px;padding: 10px">
-        <a href="" class="button is-primary is-pulled-right"style="margin: 10px;padding: 10px" >Previous</a>
-        <a href=" " class="button is-primary is-pulled-right" style="margin: 10px;padding: 10px">Next</a>
-    </div>-->
+      </div> 
     </div>
 
 @endsection

@@ -48,7 +48,7 @@ public function index()
        $filename  = time() . '.' . $image->getClientOriginalName();
        $path = public_path('images/' . $filename);
        Image::make($image->getRealPath())->resize(100,100)->save($path);
-       $project->image =$filename;     
+       $project->image = 'images/' . $filename;     
        $project->save();
        return back()->with('message', 'project created!');
   

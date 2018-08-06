@@ -24,13 +24,9 @@ if($request->ajax())
          ' <tr>'.
          
         '<td>'. $country->title.'</td>'.
-         '<td>'.
-          $country->image.'</td>'.
+         
          '</tr>';
           }
           return Response($output);
-         }
-         
-     
-}}
+         }}}
 }

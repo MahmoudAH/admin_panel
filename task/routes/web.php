@@ -37,3 +37,4 @@ Route::get('/subproject', 'SubProjectController@index')->
 
 Route::get('/search', 'SearchController@search');
 Route::get('/search2', 'SearchController2@search2');
+Route::get('/search3', 'SearchController3@search3');

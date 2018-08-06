@@ -34,8 +34,7 @@
 
           <div class="field">
             <label for="image" class="label">
-      <td><img src="{{$project->image}}"></img>
-</td>
+     <img src="{{$project->image}}" alt="image:"></img>
 </label>
             <p class="control">
               <input type="file" class="input" name="image" id="image"     value="">

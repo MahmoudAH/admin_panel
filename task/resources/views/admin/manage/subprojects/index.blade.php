@@ -10,7 +10,7 @@
         </div>
        <div class="column">
  
-       <input type="text" class="form-controller" placeholder="search" style="height: 33px ;width: 300px" id="search2" name="search2"></input>      </div>
+       <input type="text" class="form-controller" placeholder="search" style="height: 33px ;width: 300px" id="search3" name="search3"></input>      </div>
       </div>
       <hr class="m-t-0">
  <div class="panel-body" style="background-color: #ffcdd2;text-align: center;color: #009688;padding: 0;margin: 0 80px;font-size: 20px">
@@ -65,8 +65,24 @@ Delete</button></form>
       </div> <!-- end of .card -->
 
     </div>
+@endsection
 
 
+@section('scripts')
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+<script type="text/javascript">
+  $('#search3').on('keyup', function(){
+  $value=$(this).val();
+  $.ajax({
+    type : 'get',
+    url : '{{URL::to('search3')}}',
+    data :{'search':$value},
+    success :function(data){
+      $('tbody').html(data);
+    }
+  });
+  })
+</script>
 @endsection
 

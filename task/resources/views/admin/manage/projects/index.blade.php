@@ -54,7 +54,8 @@ Edit</a>
  <button  class="button is-light" type="submit" style="display: inline-block;margin:-35px -100px 0 0;background-color: #f44336">
 <i class="fa fa-trash" aria-hidden="true"></i>
 Delete</button></form>
-<a style="margin-right: -283px;margin-top: -60px;background-color: #80CBC4" class="button is-outlined m-r-5 " href="/subproject"  ><i class="fa fa-pencil-square-o" aria-hidden="true">
+<a style="margin-right: -283px;margin-top: -60px;background-color: #80CBC4" class="button is-outlined m-r-5 " href="/subproject"  ><i class="fa fa-wpexplorer" aria-hidden="true"></i>
+
 Show subProjects</a>
 </td>                
    </tr>
@@ -82,25 +83,7 @@ Show subProjects</a>
   $.ajax({
     type : 'get',
     url : '{{URL::to('search2')}}',
-    data :{'search2':$value},
-    success :function(data){
-      $('tbody').html(data);
-    }
-  });
-  })
-</script>
-@endsection
-
-@section('scripts')
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-<script type="text/javascript">
-  $('#search2').on('keyup', function(){
-  $value=$(this).val();
-  $.ajax({
-    type : 'get',
-    url : '{{URL::to('search2')}}',
-    data :{'search2':$value},
+    data :{'search':$value},
     success :function(data){
       $('tbody').html(data);
     }

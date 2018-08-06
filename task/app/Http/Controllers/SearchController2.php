@@ -14,17 +14,19 @@ class SearchController2 extends Controller
 if($request->ajax())
      {
       $output = '';
-       $projects  = DB::table('projects ')
-         ->where('title', 'like', '%'.$request->search2.'%')
+       $projects  = DB::table('projects')
+         ->where('title', 'like', '%'.$request->search.'%')
+         ->orWhere('country', 'like', '%'.$request->search.'%')
          ->get();
-         if($projects )
+         if($projects)
          {
         foreach ($projects as $key => $project) {
          $output .= 
          ' <tr>'.
          
         '<td>'.$project->title.'</td>'.
-         '<td>'.$project->country.'</td>'.
+        '<td>'.$project->country.'</td>'.
+
          '</tr>';
           }
           return Response($output);

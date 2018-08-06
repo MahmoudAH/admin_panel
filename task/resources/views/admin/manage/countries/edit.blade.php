@@ -26,7 +26,9 @@
           
 
           <div class="field">
-            <label for="image" class="label">Image:</label>
+            <label for="image" class="label">
+                    <img src="{{$country->image}}" alt="image:"></img>
+            </label>
             <p class="control">
               <input type="file" class="input" name="image" id="image">
             </p>
