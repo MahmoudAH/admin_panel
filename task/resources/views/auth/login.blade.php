@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
           <div class="card card-container">
-  <h3>Login to your account</h3> 
+  <h2 style="font-size: 20px">Login to your account</h2> 
                     <form class="form-signin" method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -51,7 +51,7 @@
             <!--<a href="{{ route('password.request') }}" class="forgot-password">
                 Forgot the password?
                  -->
-                 <a href="{{ route('register') }}">NOt member yet?</a> 
+                 <a href="{{ route('register') }}">Not member yet?</a> 
 
             </a>
         </div><!-- /card-container -->

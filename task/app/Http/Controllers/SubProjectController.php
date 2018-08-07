@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 
 class SubProjectController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
      public function index()
     {
        $subprojects =Subproject::paginate(5);

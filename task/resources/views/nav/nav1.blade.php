@@ -1,11 +1,7 @@
 <nav class="navbar has-shadow" style="background-color: #39CCCC">
   <div class="container">
     <div class="navbar-brand">
-      <!--
-      <a class="navbar-item is-paddingless" href="/admin">
-        <img src="{{asset('Originalimages/icons8-administrator-male-48.jpg')}}" alt="DevMarketer logo">
-      </a>
-    -->
+    
       <button class="button navbar-burger">
        <span></span>
        <span></span>
@@ -23,7 +19,7 @@
 
         @guest
           <a href="{{route('login')}}" class="navbar-item is-tab">Login</a>
-          <a href="{{route('register')}}" class="navbar-item is-tab">Join </a>
+          <a href="{{route('register')}}" class="navbar-item is-tab">register </a>
         @else
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link"> {{Auth::user()->name}}</a>
@@ -34,8 +30,8 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                           <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i>
-</span> Logout
+                                           <i class="fa fa-sign-out" aria-hidden="true"></i>
+ Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

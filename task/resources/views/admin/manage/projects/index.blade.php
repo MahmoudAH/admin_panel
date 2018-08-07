@@ -3,7 +3,8 @@
   <div class="flex-container">
       <div class="columns m-t-10">
         <div class="column">
-          <h1 class="title">ALL PROJECTS</h1>
+          <h1 class="title"><i class="fa fa-spinner" aria-hidden="true"></i>
+All Projects</h1>
         </div>
         <div class="column">
           <a href="{{route('project.create')}}" class="button is-primary is-pulled-right"><i class="fa fa-user-plus m-r-10"></i> Add Project</a>
@@ -30,7 +31,7 @@
                 <th > title</th>
                 <th >image</th>
                 <th >countrys</th>
-                <th  ><p style="margin-left: 134px">actions</p> </th>
+                <th  >actions</th>
 
                 
               </tr>
@@ -40,11 +41,11 @@
            @foreach ($projects as $project)
 
               <tr>
-                <td>{{$project->title}}</td>
-                <td><img src="{{$project->image}}"></img>
-                <td>{{$project->country}}</td>
+                <td >{{$project->title}}</td>
+                <td ><img src="{{$project->image}}"></img>
+                <td >{{$project->country}}</td>
 
-<td class="has-text-right" width="40%">
+<td class="has-text-right"  >
 <a class="button is-outlined m-r-5" 
 href="{{route('project.edit', $project->id)}}" style="background-color: #4CAF50" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 Edit</a>
@@ -54,7 +55,7 @@ Edit</a>
  <button  class="button is-light" type="submit" style="display: inline-block;margin:-35px -100px 0 0;background-color: #f44336">
 <i class="fa fa-trash" aria-hidden="true"></i>
 Delete</button></form>
-<a style="margin-right: -283px;margin-top: -60px;background-color: #80CBC4" class="button is-outlined m-r-5 " href="/subproject"  ><i class="fa fa-wpexplorer" aria-hidden="true"></i>
+<a style="margin-right: -281px;margin-top: -60px;background-color: #80CBC4" class="button is-outlined m-r-5 " href="/subproject"  ><i class="fa fa-wpexplorer" aria-hidden="true"></i>
 
 Show subProjects</a>
 </td>                

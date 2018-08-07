@@ -13,7 +13,12 @@ use Illuminate\Support\Facades\Input;
 class ProjectController extends Controller
 {
     
-public function index()
+      public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+     public function index()
     {
        $projects =Project::paginate(5);
         return view('admin.manage.projects.index',compact('projects'));

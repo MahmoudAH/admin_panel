@@ -3,7 +3,8 @@
   <div class="flex-container">
       <div class="columns m-t-10">
         <div class="column">
-          <h1 class="title">ALL SubPROJECTS</h1>
+          <h1 class="title"><i class="fa fa-globe" aria-hidden="true"></i>
+ALL SubProjects</h1>
         </div>
         <div class="column">
           <a href="/subproject/create" class="button is-primary is-pulled-right"><i class="fa fa-user-plus m-r-10"></i> Add SubProject</a>
