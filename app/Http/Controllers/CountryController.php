@@ -53,7 +53,7 @@ class CountryController extends Controller
     public function store(Request $request)
     {
       $this->validate($request, [
-        'title' => 'required|max:255',
+        'title' => 'required|max:100',
          'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
       ]);
