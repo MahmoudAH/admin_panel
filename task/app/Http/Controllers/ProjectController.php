@@ -39,7 +39,7 @@ class ProjectController extends Controller
     {
       $this->validate($request, [
          'title' => 'required|max:255',
-         'country' => 'required|max:255', 
+         'country' => 'required|max:30', 
          'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
 
        ]); 
