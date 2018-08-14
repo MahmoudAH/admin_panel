@@ -30,7 +30,7 @@ All Countries</h1>
               <tr>
                 <th width="30%"> title</th>
                 <th width="30%">image</th>
-                <th width="40%"><p style="margin-left:70px ">actions</p> </th>
+                <th width="40%">actions </th>
                 
               </tr>
             </thead>
