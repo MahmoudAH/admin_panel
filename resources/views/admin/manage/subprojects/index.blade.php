@@ -7,7 +7,7 @@
 ALL SubProjects</h1>
         </div>
         <div class="column">
-          <a href="/subproject/create" class="button is-primary is-pulled-right">\<i class="fa fa-product-hunt" aria-hidden="true" style="padding-right: 5px"></i>> Add SubProject</a>
+          <a href="/subproject/create" class="button is-primary is-pulled-right">\<i class="fa fa-product-hunt" aria-hidden="true" style="padding-right: 5px"></i> Add SubProject</a>
         </div>
        <div class="column">
  
@@ -40,10 +40,10 @@ ALL SubProjects</h1>
            @foreach ($subprojects as $subproject)
 
               <tr>
-                <td>{{$subproject->title}}</td>
-                <td>{{$subproject->project}}</td>
+                <td width="30%">{{$subproject->title}}</td>
+                <td width="30%">{{$subproject->project}}</td>
 
-<td class="has-text-right">
+<td class="has-text-right" width="40%">
 <a class="button is-outlined m-r-5" 
 href="{{route('subproject.edit', $subproject->id)}}" style="background-color: #4CAF50;margin-right: 400px" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 Edit</a>

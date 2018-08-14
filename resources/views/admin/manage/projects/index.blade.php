@@ -41,11 +41,11 @@ All Projects</h1>
            @foreach ($projects as $project)
 
               <tr>
-                <td >{{$project->title}}</td>
-                <td ><img src="{{$project->image}}"></img>
-                <td >{{$project->country}}</td>
+                <td width="20%">{{$project->title}}</td>
+                <td width="20%"><img src="{{$project->image}}"></img>
+                <td width="20%">{{$project->country}}</td>
 
-<td class="has-text-right"  >
+<td class="has-text-right" width="40%"  >
 <a class="button is-outlined m-r-5" 
 href="{{route('project.edit', $project->id)}}" style="background-color: #4CAF50;margin-right: 400px" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 Edit</a>
