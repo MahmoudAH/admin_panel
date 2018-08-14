@@ -11,7 +11,6 @@
     <div class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item is-tab is-active" href="/admin">admin</a>
-        <a class="navbar-item is-tab" href="/">website</a>
       </div> <!-- end of .navbar-start -->
 
 
