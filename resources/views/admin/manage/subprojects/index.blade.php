@@ -7,7 +7,8 @@
 ALL SubProjects</h1>
         </div>
         <div class="column">
-          <a href="/subproject/create" class="button is-primary is-pulled-right">\<i class="fa fa-product-hunt" aria-hidden="true" style="padding-right: 5px"></i> Add SubProject</a>
+          <a href="/subproject/create" class="button is-primary is-pulled-right">
+            <i class="fa fa-product-hunt" aria-hidden="true" style="padding-right: 5px"></i> Add SubProject</a>
         </div>
        <div class="column">
  
