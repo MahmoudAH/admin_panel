@@ -7,20 +7,15 @@
                     <form class="form-signin" method="POST" action="{{ route('login') }}">
                         @csrf
 
-                         @if ($message = Session::get('success'))
-                          <div class="alert alert-success">
-                            <p>
-                              {{ $message }}
-                            </p>
-                          </div>
-                        @endif
-                        @if ($message = Session::get('warning'))
-                          <div class="alert alert-warning">
-                            <p>
-                              {{ $message }}
-                            </p>
-                          </div>
-                        @endif
+                        <div class="panel-body" style="background-color: #ffcdd2;text-align: center;color: #009688;padding: 0;margin: 0 80px;font-size: 20px">
+                    @if (session('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+</div>
+                        
+                        
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="email" id="inputEmail" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email address" required autofocus>
 
