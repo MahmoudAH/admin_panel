@@ -2,11 +2,7 @@
 
 @section('content')
 <div class="container">
-          <div class="card card-container">
-  <h2 style="font-size: 20px">Login to your account</h2> 
-                    <form class="form-signin" method="POST" action="{{ route('login') }}">
-                        @csrf
-
+  
                         <div class="panel-body" style="background-color: #ffcdd2;text-align: center;color: #009688;padding: 0;margin: 0 80px;font-size: 20px">
                     @if (session('message'))
                         <div class="alert alert-success">
@@ -14,6 +10,10 @@
                         </div>
                     @endif
 </div>
+          <div class="card card-container">
+  <h2 style="font-size: 20px">Login to your account</h2> 
+                    <form class="form-signin" method="POST" action="{{ route('login') }}">
+                        @csrf
                         
                         
                 <span id="reauth-email" class="reauth-email"></span>
