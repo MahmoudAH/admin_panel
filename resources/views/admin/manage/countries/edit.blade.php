@@ -30,7 +30,7 @@
                     <img src="{{$country->image}}" alt="image:"></img>
             </label>
             <p class="control">
-              <input type="file" class="input" name="image" id="image">
+              <input type="file" class="input" name="image" id="image" value="">
             </p>
 </div>
          
