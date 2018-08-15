@@ -7,7 +7,8 @@
 All Countries</h1>
         </div>
         <div class="column">
-          <a href="{{route('country.create')}}" class="button is-primary is-pulled-right"><i class="fa fa-product-hunt" aria-hidden="true" style="padding-right: 5px"></i> Add Country</a>
+          <a href="{{route('country.create')}}" class="button is-primary is-pulled-right">
+           <i class="fa fa-globe" aria-hidden="true" style="padding-right: 5px"></i> Add Country</a>
         </div>
         <div class="column">
  

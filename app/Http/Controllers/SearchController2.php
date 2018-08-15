@@ -25,6 +25,8 @@ if($request->ajax())
          ' <tr>'.
          
         '<td>'.$project->title.'</td>'.
+        '<td>''</td>'.
+
         '<td>'.$project->country.'</td>'.
 
          '</tr>';

@@ -52,7 +52,7 @@ Edit</a>
 <form method="POST" action="{{ route('project.destroy',$project->id)}}">
     {{ csrf_field() }}
     {{ method_field('DELETE') }}
- <button  class="button is-light" type="submit" style="margin:-35px 300px 0 0;background-color: #f44336">
+ <button  class="button is-light" type="submit" style="margin:-35px 298px 0 0;background-color: #f44336">
 <i class="fa fa-trash" aria-hidden="true"></i>
 Delete</button></form>
 <a style="margin-right: 110px;margin-top: -60px;background-color: #80CBC4" class="button is-outlined m-r-5 " href="/subproject"  ><i class="fa fa-wpexplorer" aria-hidden="true"></i>
