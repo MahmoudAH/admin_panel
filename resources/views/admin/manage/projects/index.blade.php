@@ -29,8 +29,9 @@ All Projects</h1>
             <thead>
               <tr>
                 <th > title</th>
-                <th >image</th>
+                
                 <th >countrys</th>
+                <th >image</th>
                 <th  >actions</th>
 
                 
@@ -42,8 +43,9 @@ All Projects</h1>
 
               <tr>
                 <td width="20%">{{$project->title}}</td>
-                <td width="20%"><img src="{{$project->image}}"></img>
                 <td width="20%">{{$project->country}}</td>
+                <td width="20%"><img src="{{$project->image}}"></img>
+                
 
 <td class="has-text-right" width="40%"  >
 <a class="button is-outlined m-r-5" 
