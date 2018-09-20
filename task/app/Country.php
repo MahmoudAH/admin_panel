@@ -15,8 +15,13 @@ class Country extends Model
     return $this->belongsTo('App\User');
   }
 
-  public function projects()
+    public function projects()
   {
     return $this->hasMany('App\Project');
+  }
+    
+    public function subprojects()
+  {
+    return $this->hasMany('App\Subproject');
   }
 }
