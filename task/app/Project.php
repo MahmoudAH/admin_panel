@@ -13,6 +13,11 @@ class Project extends Model
   {
     return $this->belongsTo('App\Country');
   }
+     
+  public function user()
+  {
+    return $this->belongsTo('App\User');
+  }
 
   public function subprojects()
   {
