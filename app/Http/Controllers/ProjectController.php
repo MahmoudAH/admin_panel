@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
- use App\Country;
+use App\Country;
 use App\Project;
 use App\Subproject;
 use Image;
@@ -17,7 +17,7 @@ class ProjectController extends Controller
     {
         $this->middleware('auth');
     }
-
+     //show data from project table
      public function index()
     {
        $projects =Project::paginate(5);
@@ -35,6 +35,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */    
+    //store new project data in project table
     public function store(Request $request)
     {
       $this->validate($request, [
@@ -57,7 +58,8 @@ class ProjectController extends Controller
        $project->save();
        return back()->with('message', 'project created!');
   
-}
+    }
+    //edit project data
     public function edit($id)
     {
       $project = Project::findOrFail($id);
@@ -71,15 +73,13 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
     */
+    //update project data
     public function update(Request $request, $id)
     {
       $this->validate($request, [
         'title' => 'required|max:255',
          'country' => 'required|min:3',
           'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
-
-
-
       ]);
 
       $project = Project::findOrFail($id);
@@ -92,21 +92,17 @@ class ProjectController extends Controller
       Image::make($image->getRealPath())->resize(100,100)->save($path);
       $project->update(['image'=>"/images/{$filename}"]);
 
-}
-     $project->save();
-     return redirect()->route('project.index', $id)->with('message', 'Successfully updated!');
+      }
+      $project->save();
+      return redirect()->route('project.index', $id)->with('message', 'Successfully updated!');
     }
-
+    
+    //delete project 
     public function destroy($id)
     {
-     
       $project = Project::findOrFail($id);
-       $project->delete();
+      $project->delete();
       return back()->with('message', 'Successfully deleted!');
-}
-public function show($id){
-	
-}
-
+    }
 
 }
