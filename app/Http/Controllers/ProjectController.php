@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Country;
 use App\Project;
@@ -13,20 +12,20 @@ use Illuminate\Support\Facades\Input;
 class ProjectController extends Controller
 {
     
-      public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
      //show data from project table
-     public function index()
+    public function index()
     {
-       $projects =Project::paginate(5);
+        $projects =Project::paginate(5);
         return view('admin.manage.projects.index',compact('projects'));
     }
-      public function create()
+    public function create()
     {
-      $projects =Project::all();
-      return view('admin.manage.projects.create',compact('projects'));
+        $projects =Project::all();
+        return view('admin.manage.projects.create',compact('projects'));
     }
 
     /**
@@ -38,32 +37,34 @@ class ProjectController extends Controller
     //store new project data in project table
     public function store(Request $request)
     {
-      $this->validate($request, [
-         'title' => 'required|max:255',
-         'country' => 'required|max:30', 
-         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
+        $this->validate($request, [
+           'title' => 'required|max:255',
+           'country' => 'required|max:30', 
+           'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
 
-       ]); 
+         ]); 
 
-       $project = new Project();
+         $project = new Project();
 
-       $project->title = $request->title;
-       $project->country = $request->country;
+         $project->title = $request->title;
+         $project->country = $request->country;
 
-       $image = Input::file('image');
-       $filename  = time() . '.' . $image->getClientOriginalName();
-       $path = public_path('images/' . $filename);
-       Image::make($image->getRealPath())->resize(100,100)->save($path);
-       $project->image = 'images/' . $filename;     
-       $project->save();
-       return back()->with('message', 'project created!');
+         $image = Input::file('image');
+         $filename  = time() . '.' . $image->getClientOriginalName();
+         $path = public_path('images/' . $filename);
+         Image::make($image->getRealPath())->resize(100,100)->save($path);
+         $project->image = 'images/' . $filename;     
+        
+         $project->save();
+         return back()->with('message', 'project created!');
   
     }
+    
     //edit project data
     public function edit($id)
     {
-      $project = Project::findOrFail($id);
-      return view('admin.manage.projects.edit',compact('project'));
+        $project = Project::findOrFail($id);
+        return view('admin.manage.projects.edit',compact('project'));
     }
 
     /**
@@ -73,36 +74,37 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
     */
+
     //update project data
     public function update(Request $request, $id)
     {
-      $this->validate($request, [
+        $this->validate($request, [
         'title' => 'required|max:255',
-         'country' => 'required|min:3',
-          'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
-      ]);
+           'country' => 'required|min:3',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
+        ]);
 
-      $project = Project::findOrFail($id);
-      $project->title = $request->title;
-      $project->country = $request->country;
-      if ($request->file('image')){
-      $image = Input::file('image');
-      $filename  = time() . '.' . $image->getClientOriginalName();
-      $path = public_path('images/' . $filename);
-      Image::make($image->getRealPath())->resize(100,100)->save($path);
-      $project->update(['image'=>"/images/{$filename}"]);
+        $project = Project::findOrFail($id);
+        $project->title = $request->title;
+        $project->country = $request->country;
+        if ($request->file('image')){
+        $image = Input::file('image');
+        $filename  = time() . '.' . $image->getClientOriginalName();
+        $path = public_path('images/' . $filename);
+        Image::make($image->getRealPath())->resize(100,100)->save($path);
+        $project->update(['image'=>"/images/{$filename}"]);
 
-      }
-      $project->save();
-      return redirect()->route('project.index', $id)->with('message', 'Successfully updated!');
+        }
+      
+        $project->save();
+        return redirect()->route('project.index', $id)->with('message', 'Successfully updated!');
     }
     
     //delete project 
     public function destroy($id)
     {
-      $project = Project::findOrFail($id);
-      $project->delete();
-      return back()->with('message', 'Successfully deleted!');
+        $project = Project::findOrFail($id);
+        $project->delete();
+        return back()->with('message', 'Successfully deleted!');
     }
-
 }

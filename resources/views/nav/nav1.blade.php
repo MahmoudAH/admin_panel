@@ -30,28 +30,28 @@
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                            <i class="fa fa-sign-out" aria-hidden="true"></i>
- Logout
+                                                Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                             </div> 
+                       </div>
 
-            </div>          </div>
-
-                      <a href="{{ route('logout') }}"
+                                <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"" class="navbar-item is-tab">
-                                                     <i class="fa fa-sign-out" aria-hidden="true"></i>
-</a>
- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                     <i class="fa fa-sign-out" aria-hidden="true">
+                                                     </i>
+                                               </a>
+                                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
 
-        @endguest
+             @endguest
       </div>
     </div>
-
   </div>
 </nav>

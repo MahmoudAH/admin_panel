@@ -66,13 +66,4 @@
   </div> <!-- end of .flex-container -->
 @endsection
 
-@section('scripts')
-  <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        auto_password: true,
-      }
-    });
-  </script>
-@endsection
+

@@ -4,7 +4,9 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use App\Country;
+use App\Project;
+use App\Subproject;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -26,4 +28,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function country()
+    {
+        return $this->hasMany('App\Country');
+    }
+
+    public function project()
+    {
+        return $this->hasMany('App\Project');
+    }
+
+    public function subproject()
+    {
+        return $this->hasMany('App\Subproject');
+    }
 }

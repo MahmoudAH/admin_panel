@@ -44,17 +44,3 @@
 
   </div> <!-- end of .flex-container -->
 @endsection
-
-
-@section('scripts')
-  <script>
-
-    var app = new Vue({
-      el: '#app',
-      data: {
-        password_options: ''
-      }
-    });
-
-  </script>
-@endsection
